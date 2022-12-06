@@ -32,13 +32,14 @@ class Player {
     }
 
     takeItem(itemName) {
-        //fill in
-
+        let room = this.currentRoom;
+        let item = room.getItemByName(itemName); //finds item name
+        this.items.push(item);  //adds item name to player inventory
+        room.items.splice(room.items.indexOf(item), 1); //removes item from the room
     }
 
     dropItem(itemName) {
-
-        // Fill this in
+        //your code
     }
 
     eatItem(itemName) {
