@@ -39,7 +39,9 @@ class Player {
     }
 
     dropItem(itemName) {
-        //your code
+        let item = this.getItemByName(itemName) //finds item name
+        this.currentRoom.items.push(item); //adds item to the room
+        this.items.splice(this.items.indexOf(item), 1); //removes item from player inventory
     }
 
     eatItem(itemName) {
