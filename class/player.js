@@ -1,3 +1,5 @@
+const {Food} = require('./food');
+
 class Player {
 
     constructor(name, startingRoom) {
@@ -45,8 +47,14 @@ class Player {
     }
 
     eatItem(itemName) {
-        // Fill this in
+        let item = this.getItemByName(itemName);    //finds item name
 
+        if(item instanceof Food) {  //checks if food
+            this.items.splice(this.items.indexOf(item)); //removes item from inventory
+
+        } else {
+            console.log(`${itemName} cannot be eaten`);
+        }
     }
 
     getItemByName(name) {
