@@ -32,8 +32,7 @@ class Player {
     }
 
     takeItem(itemName) {
-
-        // Fill this in
+        //fill in
 
     }
 
@@ -48,8 +47,19 @@ class Player {
     }
 
     getItemByName(name) {
+        let items = this.items;
 
-        // Fill this in
+        //finds index for the item by name
+        let index = null;
+        items.forEach((item, i) => {
+            if(item.name === name) {
+                index = i;
+            }
+        })
+
+        //returns the item using the index
+        let item = items[index];
+        return item;
     }
 }
 
